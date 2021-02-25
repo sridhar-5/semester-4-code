@@ -1,0 +1,52 @@
+#! /c/iverilog/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-965-g55e06db6)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "C:\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
+S_000000000002ebd0 .scope module, "gateleveland" "gateleveland" 2 1;
+ .timescale 0 0;
+L_00000000010230d0 .functor NOR 1, v0000000001023400_0, v0000000001022e40_0, C4<0>, C4<0>;
+L_00000000010232a0 .functor NOR 1, L_00000000010230d0, v0000000001023400_0, C4<0>, C4<0>;
+L_0000000001053040 .functor NOR 1, L_00000000010230d0, v0000000001022e40_0, C4<0>, C4<0>;
+L_0000000001053120 .functor NOR 1, L_0000000001053040, L_00000000010232a0, C4<0>, C4<0>;
+v0000000001023400_0 .var "a", 0 0;
+v0000000001022e40_0 .var "b", 0 0;
+v000000000002ed60_0 .net "c", 0 0, L_00000000010230d0;  1 drivers
+v000000000002ee00_0 .net "d", 0 0, L_00000000010232a0;  1 drivers
+v000000000002eea0_0 .net "e", 0 0, L_0000000001053040;  1 drivers
+v000000000002a830_0 .net "y", 0 0, L_0000000001053120;  1 drivers
+    .scope S_000000000002ebd0;
+T_0 ;
+    %vpi_call 2 18 "$monitor", "a=%b, b=%b,y=%b", v0000000001023400_0, v0000000001022e40_0, v000000000002a830_0 {0 0 0};
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000000001023400_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000000001022e40_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000000001023400_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000000001022e40_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000000001023400_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000000001022e40_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000000001023400_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000000001022e40_0, 0, 1;
+    %delay 10, 0;
+    %vpi_call 2 24 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "xnor_using_nor.v";

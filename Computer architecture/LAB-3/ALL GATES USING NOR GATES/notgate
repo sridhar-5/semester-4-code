@@ -1,0 +1,31 @@
+#! /c/iverilog/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-965-g55e06db6)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "C:\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
+S_0000000000872b50 .scope module, "gateleveland" "gateleveland" 2 1;
+ .timescale 0 0;
+L_00000000008730b0 .functor NOR 1, v0000000000873210_0, v0000000000873210_0, C4<0>, C4<0>;
+v0000000000873210_0 .var "a", 0 0;
+v0000000000872ce0_0 .net "y", 0 0, L_00000000008730b0;  1 drivers
+    .scope S_0000000000872b50;
+T_0 ;
+    %vpi_call 2 10 "$monitor", "a=%b,y=%b", v0000000000873210_0, v0000000000872ce0_0 {0 0 0};
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000000000873210_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000000000873210_0, 0, 1;
+    %delay 10, 0;
+    %vpi_call 2 13 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "not_using_nor.v";

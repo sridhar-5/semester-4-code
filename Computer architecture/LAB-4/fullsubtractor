@@ -1,0 +1,95 @@
+#! /c/iverilog/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-965-g55e06db6)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "C:\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
+S_0000000000f42a90 .scope module, "gatelevel2" "gatelevel2" 2 1;
+ .timescale 0 0;
+L_0000000000f791b0 .functor XOR 1, v0000000000f75340_0, v0000000000f42cc0_0, C4<0>, C4<0>;
+L_0000000000f79610 .functor XOR 1, L_0000000000f791b0, v0000000000f42e00_0, C4<0>, C4<0>;
+L_0000000000f790d0 .functor NOT 1, v0000000000f75340_0, C4<0>, C4<0>, C4<0>;
+L_0000000000f79300 .functor AND 1, L_0000000000f790d0, v0000000000f42cc0_0, C4<1>, C4<1>;
+L_0000000000f79680 .functor NOT 1, L_0000000000f791b0, C4<0>, C4<0>, C4<0>;
+L_0000000000f793e0 .functor AND 1, v0000000000f42e00_0, L_0000000000f79680, C4<1>, C4<1>;
+L_0000000000f79370 .functor OR 1, L_0000000000f79300, L_0000000000f793e0, C4<0>, C4<0>;
+v0000000000f75340_0 .var "a", 0 0;
+v0000000000f433e0_0 .net "a_b_res", 0 0, L_0000000000f791b0;  1 drivers
+v0000000000f42c20_0 .net "and_res", 0 0, L_0000000000f79300;  1 drivers
+v0000000000f42cc0_0 .var "b", 0 0;
+v0000000000f42d60_0 .net "borrow", 0 0, L_0000000000f79370;  1 drivers
+v0000000000f42e00_0 .var "c", 0 0;
+v0000000000f42ea0_0 .net "difference", 0 0, L_0000000000f79610;  1 drivers
+v0000000000f72400_0 .net "not_a", 0 0, L_0000000000f790d0;  1 drivers
+v0000000000f724a0_0 .net "pre_res", 0 0, L_0000000000f793e0;  1 drivers
+v0000000000f72540_0 .net "res_not", 0 0, L_0000000000f79680;  1 drivers
+    .scope S_0000000000f42a90;
+T_0 ;
+    %vpi_call 2 25 "$monitor", "a=%b, b=%b, c=%b, difference=%b, borrow =%b", v0000000000f75340_0, v0000000000f42cc0_0, v0000000000f42e00_0, v0000000000f42ea0_0, v0000000000f42d60_0 {0 0 0};
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000000000f75340_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000000000f42cc0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000000000f42e00_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000000000f75340_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000000000f42cc0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000000000f42e00_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000000000f75340_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000000000f42cc0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000000000f42e00_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000000000f75340_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000000000f42cc0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000000000f42e00_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000000000f75340_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000000000f42cc0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000000000f42e00_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000000000f75340_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000000000f42cc0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000000000f42e00_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000000000f75340_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000000000f42cc0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000000000f42e00_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000000000f75340_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000000000f42cc0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000000000f42e00_0, 0, 1;
+    %delay 10, 0;
+    %vpi_call 2 34 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "fullsubtractor.v";

@@ -1,0 +1,50 @@
+#! /c/iverilog/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-965-g55e06db6)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "C:\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
+S_0000000000872a90 .scope module, "demux_12" "demux_12" 2 1;
+ .timescale 0 0;
+L_00000000011de420 .functor NOT 1, v0000000000872cc0_0, C4<0>, C4<0>, C4<0>;
+L_00000000008732f0 .functor AND 1, L_00000000011de420, v0000000000872c20_0, C4<1>, C4<1>;
+L_0000000000873120 .functor AND 1, v0000000000872cc0_0, v0000000000872c20_0, C4<1>, C4<1>;
+v0000000000872c20_0 .var "D", 0 0;
+v0000000000872cc0_0 .var "S", 0 0;
+v0000000000872d60_0 .net "Y0", 0 0, L_00000000008732f0;  1 drivers
+v0000000000872e00_0 .net "Y1", 0 0, L_0000000000873120;  1 drivers
+v0000000000872ea0_0 .net "not_out", 0 0, L_00000000011de420;  1 drivers
+    .scope S_0000000000872a90;
+T_0 ;
+    %vpi_call 2 15 "$monitor", "S=%b, D=%b, Y1=%b, Y0=%b", v0000000000872cc0_0, v0000000000872c20_0, v0000000000872e00_0, v0000000000872d60_0 {0 0 0};
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000000000872cc0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000000000872c20_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000000000872cc0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000000000872c20_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000000000872cc0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000000000872c20_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000000000872cc0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000000000872c20_0, 0, 1;
+    %delay 10, 0;
+    %vpi_call 2 21 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "12_demux.v";

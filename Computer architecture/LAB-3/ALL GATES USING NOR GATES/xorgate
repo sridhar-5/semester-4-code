@@ -1,0 +1,54 @@
+#! /c/iverilog/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-965-g55e06db6)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "C:\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
+S_0000000001022a40 .scope module, "gateleveland" "gateleveland" 2 1;
+ .timescale 0 0;
+L_00000000010230b0 .functor NOR 1, v00000000010233e0_0, v00000000011dee60_0, C4<0>, C4<0>;
+L_0000000001053200 .functor NOR 1, L_00000000010230b0, v00000000010233e0_0, C4<0>, C4<0>;
+L_0000000001053270 .functor NOR 1, L_00000000010230b0, v00000000011dee60_0, C4<0>, C4<0>;
+L_0000000001053120 .functor NOR 1, L_0000000001053270, L_0000000001053200, C4<0>, C4<0>;
+L_00000000010532e0 .functor NOR 1, L_0000000001053120, L_0000000001053120, C4<0>, C4<0>;
+v00000000010233e0_0 .var "a", 0 0;
+v00000000011dee60_0 .var "b", 0 0;
+v00000000011def00_0 .net "c", 0 0, L_00000000010230b0;  1 drivers
+v0000000001022bd0_0 .net "d", 0 0, L_0000000001053200;  1 drivers
+v0000000001022c70_0 .net "e", 0 0, L_0000000001053270;  1 drivers
+v0000000001022d10_0 .net "f", 0 0, L_0000000001053120;  1 drivers
+v0000000001022db0_0 .net "y", 0 0, L_00000000010532e0;  1 drivers
+    .scope S_0000000001022a40;
+T_0 ;
+    %vpi_call 2 19 "$monitor", "a=%b, b=%b,y=%b", v00000000010233e0_0, v00000000011dee60_0, v0000000001022db0_0 {0 0 0};
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000000010233e0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000000011dee60_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000000010233e0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000000011dee60_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000000010233e0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000000011dee60_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000000010233e0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000000011dee60_0, 0, 1;
+    %delay 10, 0;
+    %vpi_call 2 25 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "xor_using_nor.v";

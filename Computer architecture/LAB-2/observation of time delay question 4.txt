@@ -1,0 +1,17 @@
+
+3.Working with delays-Remove #10 after each input pair
+and note down the changes in output
+
+answer : found a noticable difference with a time delay of #10 all the four
+rows in the truth table are displayed but without a timedelay only the
+last row is found to be printed.
+
+with time delay for xor gate: 
+a=0,b=0,y=0
+a=0,b=1,y=1
+a=1,b=0,y=1
+a=1,b=1,y=0
+
+without timedelay for xor gate:
+a=1,b=1,y=0
+
